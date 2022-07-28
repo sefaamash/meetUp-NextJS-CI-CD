@@ -28,7 +28,7 @@ description={props.meetupData.description}
 export async function getStaticPaths(){
     try{
        //Connecting to database
- const client= await MongoClient.connect('mongodb+srv://khan4:Win20030@cluster0.6cquf.mongodb.net/mernapp?retryWrites=true&w=majority')
+ const client= await MongoClient.connect(process.env.MONGO_CONNECT)
  const db=client.db();
  if(db){
 console.log("DataBase connected")
@@ -40,7 +40,7 @@ return{
     /*this fallback is used when u tell nextjs that ur path have all the defined values or not all values are defined
     (for not-defined we set true if this used then whateverid user enter or used it will generate that ) and for(all supported defined we use false) so if user enter anything that is not present
     than he/she will get 404 error*/
-    fallback:'blocking',
+    fallback:false,
     paths:meetups.map(meetup=>({
         params:{ meetupId:meetup._id.toString()}
     }))
@@ -64,7 +64,7 @@ export async function getStaticProps(context) {
         //with context we can acees params and meetrupId is the [meetupId] that will be generated from database this will give it that id and store in meetupId var
         const meetupId=  context.params.meetupId; //meetupID is the filename [meetupId] we use in /w square bracxkets
         //Connecting to database
-  const client= await MongoClient.connect("mongodb+srv://khan4:Win20030@cluster0.6cquf.mongodb.net/mernapp?retryWrites=true&w=majority")
+  const client= await MongoClient.connect(process.env.MONGO_CONNECT)
   const db=client.db();
  console.log("DataBase connected")
  //After Connecting DataBase accessing the collection inside it wheere we want to store if its not there it will amke it
