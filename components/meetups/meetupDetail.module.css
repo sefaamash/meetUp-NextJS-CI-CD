@@ -1,0 +1,21 @@
+.detail{
+    text-align: center;
+}
+
+.detail img{
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.detail h1{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-weight: bold;
+     font-size: 40px;
+}
+
+.detail address{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+     font-size: 20px;
+}
