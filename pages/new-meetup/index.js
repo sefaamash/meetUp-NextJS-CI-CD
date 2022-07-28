@@ -1,9 +1,9 @@
 import NewMeetupForm from "../../components/meetups/NewMeetupForm"
-import  {useRouter}  from "next/router";
+import  useRouter  from "next/router";
 
 function newMeetupPage(){
     //USE ROUTER IS USED TO GET ACCESS TO URL PARTS OR COMPLETE URL
-   const router= useRouter();
+   const router= useRouter;
    async function addMeetupHandler(enteredmeetupData){
    //Now we are fetching the data from that api we make in api/new-meetup folder to amke api where we adding meetup info to database
     const response=await fetch('/api/new-meetup',{
