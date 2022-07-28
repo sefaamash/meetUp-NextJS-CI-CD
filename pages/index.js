@@ -38,7 +38,7 @@ export async function getStaticProps() {
     //This is not written in api folder or in seperate file because we want this data to be shown on home route rather than /api/eetup so we use it inside getstaric as it runs on build time on server so first it will connect to db then find the document if its there then it will fetch the data amd provide to home component
     //Connecting to database
     try{
-    const client= await MongoClient.connect(process.env.MONGO_CONNECT)
+    const client= await MongoClient.connect("mongodb+srv://khan4:Win20030@cluster0.6cquf.mongodb.net/mernapp?retryWrites=true&w=majority")
     const db=client.db();
     if(db){
    console.log("DataBase connected")
