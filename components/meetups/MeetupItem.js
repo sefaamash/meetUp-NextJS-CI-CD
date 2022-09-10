@@ -1,12 +1,12 @@
-import Card from '../ui/Card';
-import classes from './MeetupItem.module.css';
-import useRouter from "next/router"
+import Card from "../ui/Card";
+import classes from "./MeetupItem.module.css";
+import useRouter from "next/router";
 function MeetupItem(props) {
-  const router=useRouter;//it will give us acess to all the changing routes whenerver we click on any post and every post have different routes and routes will have therir id's
+  const router = useRouter; //it will give us acess to all the changing routes whenerver we click on any post and every post have different routes and routes will have therir id's
 
- function showDetailsHandler(){
-  router.push('/' +props.id); //it is equivalent to LInk component that we use it will push the latest post over all the posts that we have clicked before that is also called stack over all the posts
-//router.push takes the routes that we wnat to push
+  function showDetailsHandler() {
+    router.push("/" + props.id); //it is equivalent to LInk component that we use it will push the latest post over all the posts that we have clicked before that is also called stack over all the posts
+    //router.push takes the routes that we wnat to push
   }
   return (
     <li className={classes.item}>
